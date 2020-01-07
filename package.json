@@ -1,0 +1,9 @@
+{
+  "name": "space-photos-proto",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "github.com/cvgore/pick-spacephotos-proto",
+  "author": "cvgore",
+  "license": "UNLICENSED",
+  "private": true
+}
