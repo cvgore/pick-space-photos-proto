@@ -1,0 +1,13 @@
+/** Przy cięciu uwzględnij możliwość stosowania frameworków;
+    Jak największą cześć próbuj wykonać w html/css, a nie w postaci obrazków;
+    Możesz sprawdzić swoją stronę pod względem zgodności validatorem w3c;
+    Możesz sprawdzić czasy ładowania swojej strony na Google PageSpeed Insights i uwzględnić zalecenia google.
+**/
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap&subset=latin-ext);
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
