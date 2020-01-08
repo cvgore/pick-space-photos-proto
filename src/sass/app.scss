@@ -6,8 +6,78 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap&subset=latin-ext);
 
 @import '~bootstrap/scss/bootstrap';
+@import '~pagepiling.js/jquery.pagepiling.css';
 
 body {
 	font-family: 'Lato', sans-serif;
 }
 
+@mixin bg-full-slide($no) {
+	background: url('./../assets/img/bg_slide' + $no + '.jpg') no-repeat;
+}
+
+@include media-breakpoint-down(sm) {
+	.carousel {
+	// &__container {
+	// 	height: 100vh;
+	// 	width: 100vw;
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	position: relative;
+	// }
+
+	&__slide {
+		height: 100vh;
+		width: 100vw;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		overflow: hidden;
+
+		&-body {
+			&:not(&--no-pad) {
+				padding: 1rem;
+			}
+		}
+
+		&-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(105.68deg, rgba(152, 17, 83, 0.2) 0%, rgba(20, 25, 89, 0.2) 99.42%);
+		}
+
+		&--bg-full {
+			&-one {
+				@include bg-full-slide(1);
+
+				background-size: auto 120%;
+				background-position: center right;
+			}
+
+			&-two {
+				@include bg-full-slide(2);
+
+				background-size: auto 120%;
+				background-position: 38% 43%;
+			}
+
+			&-three {
+				@include bg-full-slide(3);
+
+				background-size: auto 200%;
+				background-position: 48% 59%;
+			}
+
+			&-four {
+				@include bg-full-slide(4);
+
+				background-size: cover;
+				background-position: center;
+			}
+		}
+	}
+}
+}

@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -17,6 +17,10 @@ mix.sass('src/sass/app.scss', 'dist/app.css');
 mix.js('src/js/app.js', 'dist/app.js');
 mix.copy('src/index.html', 'dist');
 mix.copy('src/assets/', 'dist/assets');
+
+mix.autoload({
+    jquery: ['$', 'jQuery']
+});
 
 mix.options({
 	hmrOptions: {
