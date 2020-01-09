@@ -5,17 +5,37 @@
 	<title>Space Photos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="./app.css">
+	<link rel="prefetch" href="./assets/img/bg_slide1.jpg">
+	<link rel="prefetch" href="./assets/img/bg_slide2.jpg">
+	<link rel="prefetch" href="./assets/img/bg_slide3.jpg">
+	<link rel="prefetch" href="./assets/img/bg_slide4.jpg">
 </head>
 <body>
 	<main class="carousel__container">
 		<div class="section">
-			<section class="carousel__slide carousel__slide--bg-full-one">
+			<section class="carousel__slide carousel__slide-page-home">
 				<div class="carousel__slide-overlay"></div>
 			
 				<div class="container carousel__slide-body carousel__slide-body--no-pad">
-					<div class="row flex-column">
+					<div class="row-columned justify-content-around">
 						<div class="col text-center">
 							<img src="./assets/logo.png" alt="Logo" class="img-fluid" style="max-width: 106px;">
+						</div>
+
+						<div class="col">
+							<div class="banner">
+								<div class="banner-overlay"></div>
+								<div class="banner-content">
+									<h1>Views you haven't seen yet</h1>
+								</div>
+							</div>
+						</div>
+
+						<div class="col call-to-action">
+							<a class="btn btn-primary" href="#">
+								<i class="fab fa-app-store-ios"></i>
+								Download from AppStore
+							</a>
 						</div>
 					</div>
 				</div>
