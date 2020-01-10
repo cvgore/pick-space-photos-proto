@@ -11,15 +11,15 @@
 	<link rel="prefetch" href="./assets/img/bg_slide4.jpg">
 </head>
 <body>
-	<main class="carousel__container">
+	<main>
 		<div class="section">
-			<section class="carousel__slide carousel__slide-page-home">
+			<section class="carousel__slide carousel__slide-page-home" data-anchor="home">
 				<div class="carousel__slide-overlay"></div>
 			
-				<div class="container carousel__slide-body carousel__slide-body--no-pad">
+				<div class="carousel__slide-body carousel__slide-body--no-pad">
 					<div class="row-columned justify-content-around">
 						<div class="col text-center">
-							<img src="./assets/logo.png" alt="Logo" class="img-fluid" style="max-width: 106px;">
+							<img src="./assets/logo.png" alt="Logo" class="img-fluid logo">
 						</div>
 
 						<div class="col">
@@ -32,10 +32,12 @@
 						</div>
 
 						<div class="col call-to-action">
-							<a class="btn btn-primary" href="#">
-								<i class="fab fa-app-store-ios"></i>
-								Download from AppStore
-							</a>
+							<div class="container">
+								<a class="btn btn-primary" href="#">
+									<i class="fab fa-app-store-ios"></i>
+									Download from AppStore
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -43,35 +45,153 @@
 		</div>
 
 		<div class="section">
-			<section class="carousel__slide carousel__slide--bg-full-two">
+			<section class="carousel__slide carousel__slide-page-explore" data-anchor="explore">
 				<div class="carousel__slide-overlay"></div>
 			
-				<div class="container carousel__slide-body">
-					
+				<div class="carousel__slide-body">
+					<div class="row-columned justify-content-center">
+						<div class="col">
+							<div class="container">
+								<h3>Explore infinite beauty of Earth</h3>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="container">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</p>
+								<p>
+									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
 
 		<div class="section">
-			<section class="carousel__slide carousel__slide--bg-full-three">
+			<section class="carousel__slide carousel__slide-page-stream" data-anchor="stream">
 				<div class="carousel__slide-overlay"></div>
 			
-				<div class="container carousel__slide-body">
-					
+				<div class="carousel__slide-body">
+					<div class="row-columned justify-content-center">
+						<div class="col">
+							<div class="container">
+								<h3>Stream live wherever you are</h3>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="container">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</p>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="container">
+								<div class="feature-list">
+										<div class="feature">
+											<div class="feature__icon">
+												<i class="fas fa-desktop"></i>
+											</div>
+											<div class="feature__list">
+												<p>64K resolution</p>
+											</div>
+										</div>
+
+										<div class="feature">
+											<div class="feature__icon">
+												<i class="fas fa-network-wired"></i>
+											</div>
+											<div class="feature__list">
+												<p>Zero-latency sources</p>
+											</div>
+										</div>
+
+										<div class="feature">
+											<div class="feature__icon">
+												<i class="fas fa-satellite"></i>
+											</div>
+											<div class="feature__line">
+												<p>+1000 satellites to see each corner of universe</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
 
 		<div class="section">
-			<section class="carousel__slide carousel__slide--bg-full-four">
+			<section class="carousel__slide carousel__slide-page-download" data-anchor="download">
 				<div class="carousel__slide-overlay"></div>
 			
 				<div class="container carousel__slide-body">
-					
+					<div class="row-columned justify-content-center">
+						<div class="col">
+							<div class="container">
+								<h3 class="text-center">Download app for your device now</h3>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="container">
+								<a class="btn btn-primary" href="#">
+									<i class="fab fa-app-store-ios"></i>
+									Download from AppStore
+								</a>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="container">
+								<p>You can also get app on one of these devices:</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
 	</main>
+
+	<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-transparent">
+
+		<a class="navbar-brand" href="#">
+			<img src="./assets/logo.png" alt="Logo" class="img-fluid logo-navbar">
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="menu">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Explore</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Stream</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Download</a>
+				</li>
+			</ul>
+		</div>
+
+	</nav>
+
+	<div class="next-slide-down text-center">
+		<a href="#">
+			<i class="fas fa-chevron-down next-slide-down-icon"></i>
+		</a>
+	</div>
 
 	<script src="./app.js"></script>
 </body>
