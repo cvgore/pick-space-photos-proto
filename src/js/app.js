@@ -1,10 +1,10 @@
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faChevronDown, faDesktop, faNetworkWired, faSatellite } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faDesktop, faNetworkWired, faSatellite, faBars } from '@fortawesome/free-solid-svg-icons';
 import { faAppStoreIos, faApple, faAndroid } from '@fortawesome/free-brands-svg-icons';
 
 import 'fullpage.js';
 
-library.add(faAppStoreIos, faChevronDown, faDesktop, faSatellite, faNetworkWired, faAndroid, faApple);
+library.add(faAppStoreIos, faChevronDown, faDesktop, faSatellite, faNetworkWired, faAndroid, faApple, faBars);
 
 dom.watch();
 
@@ -12,15 +12,18 @@ $(document).ready(function() {
 	const animateLogo = (reverse = false) => {
 		const $logo = $('.logo');
 		const $brand = $('.navbar-brand > img');
+		const $toggler = $('.navbar-toggler');
 		
 		if (!reverse) {
 			let pxMoveX = Math.abs($logo.offset().left - $brand.offset().left) + 24;
 			let pxMoveY = Math.abs($logo.offset().top - $brand.offset().top) + 5;
 			// $logo.css({transform: `translate3d(-${pxMoveX}px, -${pxMoveY}px, 0)`, width: '60px'});
 			$brand.css({visibility: 'visible'});
+			$toggler.css({visibility: 'visible'});
 		} else {
 			// $logo.css({transform: '', width: ''});
 			$brand.css({visibility: 'hidden'});
+			$toggler.css({visibility: 'hidden'});
 		}
 	};
 
