@@ -17,11 +17,9 @@ $(document).ready(function() {
 		if (!reverse) {
 			let pxMoveX = Math.abs($logo.offset().left - $brand.offset().left) + 24;
 			let pxMoveY = Math.abs($logo.offset().top - $brand.offset().top) + 5;
-			// $logo.css({transform: `translate3d(-${pxMoveX}px, -${pxMoveY}px, 0)`, width: '60px'});
 			$brand.css({visibility: 'visible'});
 			$toggler.css({visibility: 'visible'});
 		} else {
-			// $logo.css({transform: '', width: ''});
 			$brand.css({visibility: 'hidden'});
 			$toggler.css({visibility: 'hidden'});
 		}
