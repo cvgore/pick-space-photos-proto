@@ -1,10 +1,10 @@
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown, faDesktop, faNetworkWired, faSatellite } from '@fortawesome/free-solid-svg-icons';
-import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
+import { faAppStoreIos, faApple, faAndroid } from '@fortawesome/free-brands-svg-icons';
 
 import 'fullpage.js';
 
-library.add(faAppStoreIos, faChevronDown, faDesktop, faSatellite, faNetworkWired);
+library.add(faAppStoreIos, faChevronDown, faDesktop, faSatellite, faNetworkWired, faAndroid, faApple);
 
 dom.watch();
 
