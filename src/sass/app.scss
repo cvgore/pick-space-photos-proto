@@ -14,7 +14,7 @@ body {
 }
 
 @mixin bg-full-slide($no) {
-	background: url('./../assets/img/bg_slide' + $no + '.jpg') no-repeat;
+	background: url('./../assets/img/bg_slide' + $no + '.webp') no-repeat;
 }
 
 @mixin text-shadow() {
