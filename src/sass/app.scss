@@ -1,8 +1,3 @@
-/** Przy cięciu uwzględnij możliwość stosowania frameworków;
-    Jak największą cześć próbuj wykonać w html/css, a nie w postaci obrazków;
-    Możesz sprawdzić swoją stronę pod względem zgodności validatorem w3c;
-    Możesz sprawdzić czasy ładowania swojej strony na Google PageSpeed Insights i uwzględnić zalecenia google.
-**/
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap&subset=latin-ext);
 
 @import '~bootstrap/scss/bootstrap';
@@ -13,12 +8,23 @@ body {
 	color: #fff;
 }
 
-@mixin bg-full-slide($no) {
-	background: url('./../assets/img/bg_slide' + $no + '.webp') no-repeat;
+@mixin text-shadow() {
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-@mixin text-shadow() {
-	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+@mixin bg-full-slide($no, $size: '') {
+	background: url('./../assets/img/bg_slide' + $no + $size + '.webp') no-repeat;
+}
+
+.carousel {
+	&__slide {
+		height: 100vh;
+		width: 100vw;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		overflow: hidden;
+	}
 }
 
 @include media-breakpoint-down(sm) {
@@ -49,20 +55,13 @@ body {
 
 	.carousel {
 		&__slide {
-			height: 100vh;
-			width: 100vw;
-			margin: 0;
-			padding: 0;
-			position: relative;
-			overflow: hidden;
-
 			&:not(&--no-pad) {
 				padding-top: 70px;
 			}
 
 			&-page {
 				&-home {
-					@include bg-full-slide(1);
+					@include bg-full-slide(1, '-sm');
 
 					background-size: auto 120%;
 					background-position: center right;
@@ -93,7 +92,7 @@ body {
 							left: 0;
 							right: 0;
 							bottom: 0;
-							background-color: rgba(0,0,0,.66);
+							background-color: rgba(0, 0, 0, .66);
 						}
 
 						&-content {
@@ -105,21 +104,21 @@ body {
 				}
 
 				&-explore {
-					@include bg-full-slide(2);
+					@include bg-full-slide(2, '-sm');
 
 					background-size: auto 120%;
 					background-position: 38% 43%;
 				}
 
 				&-stream {
-					@include bg-full-slide(3);
+					@include bg-full-slide(3, '-sm');
 
 					background-size: auto 200%;
 					background-position: 48% 59%;
 				}
 
 				&-download {
-					@include bg-full-slide(4);
+					@include bg-full-slide(4, '-sm');
 
 					background-size: cover;
 					background-position: center;
@@ -196,9 +195,9 @@ body {
 	}
 
 	.logo-navbar {
-		transition: visibility .05s linear;
+		//transition: visibility .05s linear;
 		max-width: 60px;
-		visibility: hidden;
+		//visibility: hidden;
 	}
 
 	.navbar-toggler {
@@ -240,13 +239,212 @@ body {
 	}
 }
 
+@include media-breakpoint-up(sm) {
+	body {
+		font-size: 18px;
+	}
+
+	h1 {
+		font-weight: 300;
+		font-size: 2.2rem;
+		text-align: center;
+		padding: 1rem;
+		margin-bottom: 0;
+		user-select: none;
+		display: inline-block;
+	}
+
+	h3 {
+		@include text-shadow();
+
+		font-weight: 400;
+		font-size: 1.9rem;
+		margin-bottom: 0;
+		user-select: none;
+	}
+
+	p {
+		@include text-shadow();
+
+		font-weight: 300;
+		line-height: 1.3;
+	}
+
+	.carousel {
+		&__slide {
+			&-page {
+				&-home {
+					@include bg-full-slide(1);
+
+					background-size: cover;
+
+					.carousel__slide-body {
+						padding: 2rem 0;
+					}
+
+					.logo-container, .cta-container {
+						display: none;
+					}
+
+					.logo {
+						transform-origin: top left;
+						transition: transform .05s linear, width .05s linear;
+						max-width: 106px;
+					}
+
+					.banner {
+						$border-style: 2px solid #fff;
+
+						border: $border-style;
+						position: relative;
+						overflow: hidden;
+						margin-left: -15px;
+						margin-right: -15px;
+						display: inline-block;
+
+						&-container {
+							text-align: center;
+						}
+
+
+						&-overlay {
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							background-color: rgba(0, 0, 0, .66);
+						}
+
+						&-content {
+							height: 100%;
+							width: 100%;
+							position: relative;
+						}
+					}
+				}
+
+				&-explore {
+					@include bg-full-slide(2);
+
+					background-size: cover;
+				}
+
+				&-stream {
+					@include bg-full-slide(3);
+
+					background-size: cover;
+					background-position: center;
+				}
+
+				&-download {
+					@include bg-full-slide(4);
+
+					background-size: cover;
+					background-position: center;
+				}
+
+			}
+
+			&-body {
+				height: 100%;
+				width: 100%;
+				position: relative;
+
+				&:not(&--no-pad) {
+					padding: 4rem 1rem 1rem 1rem;
+				}
+			}
+
+			&-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(105.68deg, rgba(152, 17, 83, 0.2) 0%, rgba(20, 25, 89, 0.2) 99.42%);
+			}
+		}
+	}
+
+	.row-columned {
+		display: flex;
+		flex-flow: column wrap;
+		height: 100%;
+
+		> .col {
+			flex: 0;
+			padding-right: 0;
+			padding-left: 0;
+
+			&-flex {
+				&-1 {
+					display: flex;
+					flex: 1;
+				}
+
+				&-3 {
+					display: flex;
+					flex: 3;
+				}
+
+				&-5 {
+					display: flex;
+					flex: 5;
+				}
+			}
+		}
+	}
+
+	.device-list {
+		font-size: 2rem;
+
+		svg:not(:first-child) {
+			margin-left: 1rem
+		}
+	}
+
+	.logo-navbar {
+		max-width: 80px;
+	}
+
+	.feature-list {
+		display: flex;
+		flex-flow: column wrap;
+
+		.feature {
+			flex: 1;
+			display: flex;
+			flex-flow: column wrap;
+			align-items: center;
+
+			&__icon, &__line {
+				flex: 0;
+			}
+
+			&__icon {
+				font-size: 2.2rem;
+				margin-bottom: 0;
+			}
+
+			&__line {
+				@include text-shadow();
+
+				font-weight: 300;
+				max-width: 75%;
+				text-align: center;
+			}
+		}
+	}
+}
+
 .btn {
 	&-primary {
 		padding: .78rem;
 		background: linear-gradient(320deg, #141959 0%, #981153 100%);
 
 		border-radius: 2px;
-		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
 		font-weight: 300;
 		transition: outline-color .26s ease-in;
 		border: 0 !important;
@@ -256,7 +454,7 @@ body {
 
 		&:hover, &:focus, &:active, &:visited, &:active:focus {
 			outline-color: #fff;
-			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25) !important;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25) !important;
 		}
 
 		svg {
