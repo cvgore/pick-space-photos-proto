@@ -12,7 +12,7 @@
     "bootstrap": "^4.4.1",
     "cross-env": "^6.0.3",
     "fullpage.js": "2.8.8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "laravel-mix": "^5.0.1",
     "pagepiling.js": "^1.5.6",
     "resolve-url-loader": "^3.1.0",
